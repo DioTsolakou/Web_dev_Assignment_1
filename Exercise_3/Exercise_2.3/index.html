@@ -4,36 +4,17 @@
         <title>About me</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!--this needs to be external-->
-        <style>
-            h1, article, h2, footer {
-                text-align: center;
-            }
-
-            h1, h2 {
-                text-decoration: underline;
-            }
-
-            footer {
-                text-align: ;
-            }
-
-            ul {
-                display: table;
-                margin: 0 auto;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <main>
-            <article>
-                <h1>About me</h1>
+            <article id="index_article">
+                <h1 id="about">About me</h1>
                 <img src="images/dio.jpg" alt="me" width="250" height="336">
-                <p>My name is Diogenis Tsolakou, I'm 21 years old and I'm on the fourth year of university.
+                <p id="short_bio">My name is Diogenis Tsolakou, I'm 21 years old and I'm on the fourth year of university.
                     <br>You can learn more things about me by clicking the links below.</p>
             </article>
-            <aside>
+            <aside id="list">
                 <section>
                     <h2>Links</h2>
                     <nav>
@@ -49,7 +30,7 @@
 
         <footer>
             <p>Copyright © 2021
-            <br>Made with HTML 5</p>
+            <br>Made with HTML 5 & CSS</p>
         </footer>
     </body>
 </html>
