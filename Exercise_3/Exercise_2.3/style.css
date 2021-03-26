@@ -25,7 +25,11 @@ footer {
 ul {
     display: table;
     margin: 0 auto;
-    padding-bottom: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+label {
+    position: relative;
 }
 
 #list, #list2 {
@@ -41,13 +45,31 @@ ul {
     font-size: 2rem;
 }
 
-#footer_info {
-    margin-left: 5rem;
-    text-align: left;
+#links {
+    font-size: 1.25rem;
 }
 
-#footer_links {
-    margin-right: 5rem;
-    text-align: right;
-    margin-top: 0;
+#send_email {
+    text-align: center;
+}
+
+#submit_btn {
+    margin-bottom: 1.5rem;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: tomato;
+    text-decoration: underline;
+}
+
+a:active {
+    color: maroon;
+}
+
+main.hobbies {
+    font-family: "Fira Code", serif;
 }

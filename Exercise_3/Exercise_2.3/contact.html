@@ -20,21 +20,22 @@
             <section>
                 <h2>Or if you prefer you can send me an email through this form</h2>
                 <form id="send_email" method="POST" action="mailto:dio.tsolakou@hotmail.com" enctype="text/plain">
-                    <label for="txt_name">Name* : </label>
-                    <input type="text" id="txt_name" name="name" minlength="3" required>
-                    <br><br>
-                    <label for="txt_email">Email* : </label>
-                    <input type="email" id="txt_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="abc@efg.hij" required>
-                    <br><br>
-                    <label for="txt_subject">Subject : </label>
-                    <input type="text" id="txt_subject" name="subject">
-                    <br><br>
-                    <label for="txt_write">Contents * :</label>
-                    <br>
+                    <div id="labels_and_info">
+                        <label for="txt_name">Name* : </label>
+                        <input type="text" id="txt_name" name="name" minlength="3" required>
+                        <br><br>
+                        <label for="txt_email">Email* : </label>
+                        <input type="email" id="txt_email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="abc@efg.hij" required>
+                        <br><br>
+                        <label for="txt_subject">Subject : </label>
+                        <input type="text" id="txt_subject" name="subject">
+                        <br><br>
+                        <label for="txt_write">Contents * :</label>
+                    </div>
                     <textarea id="txt_write" name="contents" cols="100" rows="25" minlength="100" maxlength="2500" wrap="hard" required></textarea>
                     <br><br>Fields with an asterisk (*) are required to send an email.
                     <br><br>
-                    <button type="submit">Submit</button>
+                    <button type="submit" id="submit_btn">Submit</button>
                 </form>
             </section>
         </main>
