@@ -61,6 +61,11 @@ a:link {
     text-decoration: none;
 }
 
+a:visited {
+    color: royalblue;
+    text-decoration: none;
+}
+
 a:hover {
     color: tomato;
     text-decoration: underline;
@@ -72,4 +77,22 @@ a:active {
 
 main.hobbies {
     font-family: "Fira Code", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Adobe Garamond Pro", serif;
+}
+
+.footer_links {
+    list-style-type: none;
+}
+
+.footer_links li {
+    float: left;
+    text-align: center;
+}
+
+.footer_links a {
+    margin-top: 0.3rem;
+    margin-left: 3rem;
 }
