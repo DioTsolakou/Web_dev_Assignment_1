@@ -1,4 +1,5 @@
 body {
+    position: relative;
     height: 100vh;
     margin: 0;
     display: flex;
@@ -16,7 +17,6 @@ h1, h2 {
 }
 
 footer {
-    min-height: 50px;
     background: #c8f2fa;
     margin-top: auto;
     text-align: center;
@@ -81,6 +81,7 @@ main.hobbies {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: "Adobe Garamond Pro", serif;
+    font-size: 1.85rem;
 }
 
 .footer_links {
