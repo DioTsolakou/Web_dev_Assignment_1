@@ -1,0 +1,9 @@
+#nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #c8f2fa;
+}
+
+#nav > div {
+    margin: 1rem;
+}
