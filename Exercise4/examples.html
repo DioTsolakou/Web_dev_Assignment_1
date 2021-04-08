@@ -8,11 +8,59 @@
     </head>
 
     <body>
-        <main>
-            <nav>
-                <a href="home.html">Home</a>
-                <a href="sources.html">Sources</a>
-            </nav>
+        <header>
+            <h1>Examples</h1>
+            <h3>Most photos need to be enlarged to notice subtle details.</h3>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="../Exercise3/Exercise2_with_CSS/index.html">About Me</a></li>
+            </ul>
+        </nav>
+
+        <main id="examples">
+            <div id="row_1">
+                <figure>
+                    <img src="images/hard_vs_soft_shadows.png" alt="hard_vs_soft_shadows" width="607" height="300">
+                    <figcaption>An example of hard (left) vs soft (right) shadows.
+                        <br>Notice how soft shadows look more realistic compared to the sharply defined hard shadows.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/balls_rtx_render.png" alt="balls_scene" width="400" height="300">
+                    <figcaption>Render showing reflections on balls of differing properties</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/complex_example.png" alt="cg_example" width="400" height="300">
+                    <figcaption>More complex example of how raytracing works and rays are created.
+                        <br>Each hit/intersection creates a new ray.</figcaption>
+                </figure>
+            </div>
+
+            <div id="row_2">
+                <figure>
+                    <img src="images/bfv_rtx.jpg" alt="bfv" width="500" height="281">
+                    <figcaption>Battlefield V comparison of no raytracing (left) vs raytracing (right).
+                                <br>Notice how the sides of the building are reflected on the puddles
+                        instead of the<br> puddles looking muddy/dark or having baked reflections(leftmost puddle).</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/rtx_reflections.jpg" alt="rtx_reflections" width="500" height="281">
+                    <figcaption>Reflections due to raytracing.
+                        <br>Really detailed reflections depending on the angle of viewing
+                        <br>instead of being the same regardless of angle.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/ray_traced_room.png" alt="rtx_room" width="500" height="281">
+                    <figcaption>Photorealistic raytraced room. Notice the subtle refraction of light on the vase,
+                        <br>the individual shadows of each pillow and how they are also reflected on <br>the fireplace mirror.</figcaption>
+                </figure>
+            </div>
         </main>
     </body>
 </html>

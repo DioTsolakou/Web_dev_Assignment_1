@@ -56,6 +56,9 @@ header {
 figure {
     float: right;
     margin-bottom: 2rem;
+}
+
+#simple_example {
     background-color: floralwhite;
 }
 
@@ -80,4 +83,19 @@ footer {
     grid-column: 1 / span 3;
     margin-top: auto;
     text-align: center;
+}
+
+#examples {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto;
+    grid-gap: 0.25rem;
+}
+
+#row_1 {
+    grid-row: 1;
+}
+
+#row_2 {
+    grid-row: 2;
 }
