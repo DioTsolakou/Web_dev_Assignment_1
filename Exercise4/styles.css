@@ -110,7 +110,3 @@ footer {
 #row_4 {
     grid-row: 4;
 }
-
-#row_4 > figure:last-of-type {
-
-}
