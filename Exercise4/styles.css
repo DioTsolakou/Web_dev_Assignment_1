@@ -14,7 +14,7 @@ p {
     font-size: 1.1rem;
 }
 
-ul li {
+ol li {
     font-size: 1.1rem;
 }
 
@@ -53,13 +53,11 @@ header {
     color: white;
 }
 
-figure {
-    float: right;
-    margin-bottom: 2rem;
-}
 
 #simple_example {
     background-color: floralwhite;
+    float: right;
+    margin-bottom: 2rem;
 }
 
 main {
@@ -87,9 +85,14 @@ footer {
 
 #examples {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
     grid-gap: 0.25rem;
+}
+
+#examples > div {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 #row_1 {
@@ -98,4 +101,16 @@ footer {
 
 #row_2 {
     grid-row: 2;
+}
+
+#row_3 {
+    grid-row: 3;
+}
+
+#row_4 {
+    grid-row: 4;
+}
+
+#row_4 > figure:last-of-type {
+
 }
