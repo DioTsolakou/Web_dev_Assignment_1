@@ -22,8 +22,8 @@
 
         <main>
             <article>
+                <h2>What is raytracing?</h2>
                 <section>
-                    <h2>What is raytracing?</h2>
                     <p>According to Wikipedia<a href="sources.html"><sup>(1)</sup></a> , raytracing is a rendering technique in 3D graphics. A method of generating
                         an image by tracing the path of light and simulating the effects it has on the objects in the surrounding area.
                         <br>The reason for its use is due to the highly realistic results that it produces, often blurring the line
@@ -84,7 +84,7 @@
                     <br>
                     <pre>
                     <code>
-Color raytrace(Ray r, int depth, Scene world, vector &ltLight*&gt lights)
+Color raytrace(Ray r, int depth, Scene world, vector &lt;Light*&gt; lights)
 {
     Ray *refl, *tran;
     Color color_r, color_t, color_l;
