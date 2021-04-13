@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Examples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js"></script>
+    </head>
+
+    <body onload="changeImage()">
+        <header>
+            <h1>Examples</h1>
+            <h3>Click the photos to enlarge them to notice subtle details.</h3>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="../Exercise3/Exercise2_with_CSS/index.html">About Me</a></li>
+            </ul>
+        </nav>
+
+        <main id="examples">
+            <div id="row_1">
+                <figure>
+                    <img src="images/hard_vs_soft_shadows.png" alt="hard_vs_soft_shadows" width="607" height="300" onclick="openImage(this)">
+                    <figcaption>An example of hard (left) vs soft (right) shadows.<a href="sources.html"><sup>(2)</sup></a>
+                        <br>Notice how soft shadows look more realistic compared to the sharply defined hard shadows.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/balls_rtx_render.png" alt="balls_scene" width="400" height="300" onclick="openImage(this)">
+                    <figcaption>Render showing reflections on balls of differing properties<a href="sources.html"><sup>(5)</sup></a></figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/complex_example.png" alt="cg_example" width="400" height="300" onclick="openImage(this)">
+                    <figcaption>More complex example of how raytracing works and rays are created.
+                        <br>Each hit/intersection creates a new ray. <a href="sources.html"><sup>(15)</sup></a></figcaption>
+                </figure>
+            </div>
+
+            <div id="row_2">
+                <figure>
+                    <img src="images/bfv_rtx.jpg" alt="bfv" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Battlefield V comparison of no raytracing (left) vs raytracing (right).<a href="sources.html"><sup>(6)</sup></a>
+                                <br>Notice how the sides of the building are reflected on the puddles
+                        instead of the<br> puddles looking muddy/dark or having baked reflections(leftmost puddle).</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/rtx_reflections.jpg" alt="rtx_reflections" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Reflections due to raytracing.<a href="sources.html"><sup>(4)</sup></a>
+                        <br>Really detailed reflections depending on the angle of viewing
+                        <br>instead of being the same regardless of angle.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/ray_traced_room.png" alt="rtx_room" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Photorealistic raytraced room. Notice the subtle refraction of light on the vase,
+                        <br>the individual shadows of each pillow and how they are also reflected on <br>the fireplace mirror.<a href="sources.html"><sup>(8)</sup></a></figcaption>
+                </figure>
+            </div>
+
+            <div id="row_3">
+                <figure>
+                    <img src="images/animation.gif" alt="rtx_animation" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Raytraced animation.<a href="sources.html"><sup>(9)</sup></a> Notice how the objects are reflected on the floor
+                        <br>and on the surface of other objects and the refractions that happen among them.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/cp_rtx.jpg" alt="cp2077_rtx" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Cyberpunk 2077 on Raytracing Ultra settings.<a href="sources.html"><sup>(10)</sup></a>
+                        <br>The lights are reflected on the wet street and the puddle.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/cp_no_rtx.jpg" alt="cp2077_no_rtx" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Cyberpunk 2077 on Ultra settings without raytracing.<a href="sources.html"><sup>(10)</sup></a></figcaption>
+                </figure>
+            </div>
+
+            <div id="row_4">
+                <figure>
+                    <img src="images/sw_rt.png" alt="star_wars_reflections" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Real time raytracing from Star Wars Reflections demo.<a href="sources.html"><sup>(13)</sup></a></figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/bugatti_rt.jpg" alt="bugatti_rt" width="500" height="281" onclick="openImage(this)">
+                    <figcaption>Raytracing render with accurate reflections <br>depending on the shape of the surface.<a href="sources.html"><sup>(14)</sup></a></figcaption>
+                </figure>
+
+                <figure>
+                    <img src="images/nt_rt_demo.jpg" alt="ninja_theory_demo" width="249" height="281" onclick="openImage(this)">
+                    <figcaption>Ninja Theory's Project Mara raytracing demo comparison.<a href="sources.html"><sup>(11)</sup></a></figcaption>
+                </figure>
+            </div>
+        </main>
+
+        <footer>
+            <p>Copyright © 2021
+                <br>Made with HTML 5 & CSS</p>
+        </footer>
+    </body>
+</html>
