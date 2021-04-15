@@ -139,6 +139,16 @@ footer {
     }
 }
 
+#date_data {
+    float: left;
+    margin-left: 2rem;
+    vertical-align: center;
+}
+
 #date {
     float: left;
+}
+
+#date_sentence {
+    clear: left;
 }
