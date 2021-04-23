@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Examples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js"></script>
+    </head>
+
+    <body onload="start()">
+        <header>
+            <h1>Sign Up</h1>
+            <div id="date_data">
+                <p id="date"></p>
+                <p id="date_sentence"></p>
+            </div>
+        </header>
+        <nav id="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="../Exercise3/Exercise2_with_CSS/index.html">About Me</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <form autocomplete="on">
+                <fieldset id="personal_details">
+                    <legend>Personal details</legend>
+                    <div id="column_1">
+                        <label for="name">Name : *</label><br>
+                        <input type="text" id="name" name="name" required size="25"><br>
+                        <label for="dob">Date of Birth : *</label><br>
+                        <input type="date" id="dob" name="dob" required><br>
+                        <label for="phone_1">Phone #1 : *</label><br>
+                        <input type="tel" id="phone_1" required size="25"><br>
+                        <label for="phone_2">Phone #2 :</label><br>
+                        <input type="tel" id="phone_2" size="25"><br>
+                        <label for="pw">Password : *</label><br>
+                        <input type="password" id="pw" required size="25"><br>
+                    </div>
+                    <div id="column_2">
+                        <label for="surname">Surname : *</label><br>
+                        <input type="text" id="surname" name="surname" required size="25"><br>
+                        <label for="occupation">Occupation : *</label><br>
+                        <input type="text" id="occupation" name="occupation" required size="25" placeholder="Study topic if a student"><br>
+                        <label for="occ_type">Working hours : *</label><br>
+                        <input list="type" id="occ_type" required size="25"><br>
+                        <datalist id="type">
+                            <option>Full time</option>
+                            <option>Part time</option>
+                            <option>Student</option>
+                            <option>Unemployed</option>
+                        </datalist>
+                        <label for="email">Email : *</label><br>
+                        <input type="email" id="email" required size="25" placeholder="abc@def.ghi"><br>
+                        <label for="conf_pw">Confirm password : *</label><br>
+                        <input type="password" id="conf_pw" required size="25"><br>
+                    </div>
+                </fieldset>
+
+                <fieldset id="questionnaire">
+                    <legend>Getting to know you</legend>
+                    <div>
+                        <label for="join_reason">Why do you want to sign up? *</label><br>
+                        <textarea id="join_reason" cols="80" rows="15" minlength="100" maxlength="2500" wrap="hard" required></textarea><br>
+                    </div>
+                    <div>
+                        <label>What is your programming experience? *</label><br>
+                        <div class="xp_radios">
+                            <label for="xp1">1</label>
+                            <input type="radio" id="xp1">
+                        </div>
+                        <div class="xp_radios">
+                            <label for="xp2">2</label>
+                            <input type="radio" id="xp2">
+                        </div>
+                        <div class="xp_radios">
+                            <label for="xp3">3</label>
+                            <input type="radio" id="xp3">
+                        </div>
+                        <div class="xp_radios">
+                            <label for="xp4">4</label>
+                            <input type="radio" id="xp4">
+                        </div>
+                        <div class="xp_radios">
+                            <label for="xp5">5</label>
+                            <input type="radio" id="xp5">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+
+        <footer>
+            <p>Copyright © 2021
+                <br>Made with HTML 5 & CSS</p>
+        </footer>
+    </body>
+</html>

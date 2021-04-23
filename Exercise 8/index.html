@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <script src="index.js"></script>
+    </head>
+
+    <body onload="start()">
+        <header>
+            <h1>Raytracing</h1>
+            <div id="date_data">
+                <p id="date"></p>
+                <p id="date_sentence"></p>
+            </div>
+        </header>
+
+        <nav id="nav">
+            <ul>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="sign_up.html">Sign Up</a></li>
+                <li><a href="../Exercise3/Exercise2_with_CSS/index.html">About Me</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <article>
+                <h2>What is raytracing?</h2>
+                <section>
+                    <p>According to Wikipedia<a href="sources.html"><sup>(1)</sup></a> , raytracing is a rendering technique in 3D graphics. A method of generating
+                        an image by tracing the path of light and simulating the effects it has on the objects in the surrounding area.
+                        <br>The reason for its use is due to the highly realistic results that it produces, often blurring the line
+                        between reality and virtual images if given the time and done correctly.
+                        <br>For these results, however, raytracing requires a considerable amount of resources and time.
+                        Therefore for most of its existence it has been mainly used in offline rendering, meaning images and
+                        visual effects for movies, where time is not of the essence.
+                        <br>In the past few years we have seen a start of it being used in real time applications like video games
+                        through the use of specific graphics cards that greatly improve the time and resources it requires.</p>
+                    <h2>Why use raytracing?</h2>
+                    <p>As mentioned in the previous section, raytracing produces photorealistic results. This is done by
+                        simulating effects that we experience in our everyday life. <br>Such examples are the reflection and
+                        refraction of light when it collides with an opaque or transparent enough object respectively, or the scattering and dispersion of it.
+                        <br>These effects produce realistic soft shadows instead of "baked" hard shadows<a href="sources.html"><sup>(3)</sup></a> that look very defined
+                        with sharp edges and reflections of objects on the ground or other surfaces.</p>
+                    <figure id="simple_example">
+                        <picture>
+                            <source media="(max-width:768px)" srcset="../resources/images/simple_raytracing_example_med.png">
+                            <source media="(max-width:425px)" srcset="../resources/images/simple_raytracing_example_low.png">
+                            <img src="../resources/images/simple_raytracing_example.png" alt="rtx_simple_example" width="500" height="332" onclick="openImage(this)">
+                        </picture>
+                        <figcaption>A simple example of shadow rays<a href="sources.html"><sup>(1)</sup></a></figcaption>
+                    </figure>
+                </section>
+
+                <section>
+                    <h2>How does raytracing work?</h2>
+                    <p id="how">In the most simple explanation a ray is "shot" from the camera, meaning from the user's point of view (POV),
+                        if that ray hits a surface then depending on the properties of that surface it can do any of three things.
+                        These three things are :</p>
+                    <ul>
+                        <li>Produce a mirrored reflection ray that will in turn hit a surface and create the reflection of the former object on the latter.</li>
+                        <li>Produce a refraction ray if the surface is transparent enough for light to pass through it.
+                            This ray can exit the object and hit other surfaces, resulting in more rays of the three types mentioned.</li>
+                        <li>Produce a shadow ray that will travel towards the light(s), if that ray is intercepted by another object that is opaque
+                            during its travel to a light then it means that the light does not illuminate the surface that created the shadow ray.</li>
+                    </ul>
+                    <p>For more detailed and complicated examples of raytracing, see the <a href="examples.html">Examples</a> page.</p>
+                </section>
+
+                <section>
+                    <h2>Disadvantages and solutions</h2>
+                    <p id="dis">Above we mentioned that despite how realistic the results of raytracing are, it's also quite performance-heavy.
+                        <br>This is due to the fact that this recursive creation of rays, each ray creates another and so forth,
+                        takes quite some time to create the desired results and is also difficult for most hardware to do the
+                        computations needed for so many rays while also rendering an entire scene real time. <br>Therefore, until
+                        recently it was almost impossible for commercially available GPUs to use raytracing in real time for games since they lacked hardware-accelerated raytracing,
+                        so they used software-accelerated raytracing for offline renders that can take hours to complete.
+                        <br>In the last 2 years Nvidia and AMD have released cards that incorporate hardware acceleration and
+                        have made real time raytracing a possibility for everyone that can afford it.
+                        <br>However, it is still quite demanding in most cases.</p>
+                    <h3>So what can we do to alleviate some of the weight of this technique?</h3>
+                    <p>One of the simpler and most used solutions is to just limit the amount of rays that can be created.
+                        <br>To set a specific depth after which no more rays are produced by another ray or an adaptive depth depending on
+                        the desired quality. <br>Another solution is to decrease the intensity of a ray depending on how far it has travelled or with what it has collided.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Code example</h2>
+                    Here we can see a code example of a basic ray-tracing algorithm.<a href="sources.html"><sup>(15)</sup></a>
+                    <br>
+                    <pre>
+                        <code>
+Color raytrace(Ray r, int depth, Scene world, vector &lt;Light*&gt; lights)
+{
+    Ray *refl, *tran;
+    Color color_r, color_t, color_l;
+
+    // Terminate if maximum recursion depth has been reached.
+    if ( depth > MAX_DEPTH ) return backgroundColor;
+
+    // Intersect ray with scene and keep nearest intersection point
+    int hits = findClosestIntersection(r, world);
+    if ( hits == 0 ) return backgroundColor;
+
+    // Apply local illumination model, including shadows
+    color_l = calculateLocalColor(r, lights, world);
+
+    // Trace reflected and refracted rays according to material properties
+    if (r->isect->surface->material->k_refl > 0)
+    {
+        refl = calculateReflection(r);
+        color_r = raytrace(refl, depth+1, world, lights);
+    }
+    if (r->isect->surface->material->k_refr > 0)
+    {
+        tran = calculateRefraction(r);
+        color_t = raytrace(tran, depth+1, world, lights);
+    }
+    return color_l + color_r + color_t;
+}
+                        </code>
+                    </pre>
+                </section>
+
+                <figure id="dof_example">
+                    <picture>
+                        <source media="(max-width:768px)" srcset="../resources/images/balls_dof_render_med.png">
+                        <source media="(max-width:425px)" srcset="../resources/images/balls_dof_render_low.png">
+                        <img src="../resources/images/balls_dof_render.png" alt="dof_render" width="533" height="300" onclick="openImage(this)">
+                    </picture>
+                    <figcaption>Example of depth of field effect and reflections</figcaption>
+                </figure>
+            </article>
+        </main>
+
+        <footer>
+            <p>Copyright © 2021
+                <br>Made with HTML 5 & CSS</p>
+        </footer>
+    </body>
+</html>
