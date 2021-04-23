@@ -10,7 +10,7 @@ body {
     grid-template-rows: auto 1fr auto auto;
     grid-template-areas: "header" "nav" "main" "footer";
     grid-gap: 0.5rem;
-    background: url("images/clouds.jpg") no-repeat;
+    background: url("../resources/images/clouds.jpg") no-repeat;
     background-size: cover;
     font-size: 1rem;
     font-family: customFont, serif;

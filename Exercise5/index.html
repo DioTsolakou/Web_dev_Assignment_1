@@ -40,7 +40,11 @@
                         <br>These effects produce realistic soft shadows instead of "baked" hard shadows<a href="sources.html"><sup>(3)</sup></a> that look very defined
                         with sharp edges and reflections of objects on the ground or other surfaces.</p>
                     <figure id="simple_example">
-                        <img src="images/simple_raytracing_example.png" alt="rtx_simple_example" width="500" height="332">
+                        <picture>
+                            <source media="(max-width:768px)" srcset="../resources/images/simple_raytracing_example_med.png">
+                            <source media="(max-width:425px)" srcset="images/simple_raytracing_example_low.png">
+                            <img src="../resources/images/simple_raytracing_example.png" alt="rtx_simple_example" width="500" height="332">
+                        </picture>
                         <figcaption>A simple example of shadow rays<a href="sources.html"><sup>(1)</sup></a></figcaption>
                     </figure>
                 </section>
@@ -117,7 +121,11 @@ Color raytrace(Ray r, int depth, Scene world, vector &lt;Light*&gt; lights)
                 </section>
 
                 <figure id="dof_example">
-                    <img src="images/balls_dof_render.png" alt="dof_render" width="533" height="300">
+                    <picture>
+                        <source media="(max-width:768px)" srcset="../resources/images/balls_dof_render_med.png">
+                        <source media="(max-width:425px)" srcset="../resources/images/balls_dof_render_low.png">
+                        <img src="../resources/images/balls_dof_render.png" alt="dof_render" width="533" height="300">
+                    </picture>
                     <figcaption>Example of depth of field effect and reflections</figcaption>
                 </figure>
             </article>

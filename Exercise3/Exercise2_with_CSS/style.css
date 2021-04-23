@@ -4,7 +4,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    background: url("images/clouds.jpg") no-repeat;
+    background: url("../../resources/images/clouds.jpg") no-repeat;
     background-size: cover;
 }
 

@@ -14,7 +14,7 @@ body {
     grid-template-rows: auto 1fr auto auto;
     grid-template-areas: "header" "nav" "main" "footer";
     grid-gap: 0.5rem;
-    background: url("images/clouds.jpg") no-repeat;
+    background: url("../resources/images/clouds.jpg") no-repeat;
     background-size: cover;
     font-size: 1rem;
     font-family: customFont, serif;
@@ -151,4 +151,161 @@ footer {
 
 #date_sentence {
     clear: left;
+}
+
+/* For tablets */
+@media only screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr auto auto;
+        grid-template-areas: "header" "nav" "main" "footer";
+        grid-gap: 0.5rem;
+        background: url("../resources/images/clouds.jpg") no-repeat;
+        background-size: cover;
+        font-size: 1rem;
+        font-family: customFont, serif;
+        height: 100%;
+        min-height: 100vh;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        text-align: center;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #nav {
+        text-align: center;
+        grid-area: menu;
+        grid-column: 1;
+        grid-row: 2 / span 1;
+    }
+
+    main {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #simple_example {
+        float: none;
+    }
+
+    pre {
+        float: none;
+    }
+
+    footer {
+        grid-area: footer;
+        grid-column: 1 / span 1;
+    }
+
+    #examples {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #examples > div {
+        flex-direction: column-reverse;
+    }
+
+    #examples > div > figure > img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* For phones */
+@media only screen and (max-width: 425px) {
+    body {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto 1fr auto auto;
+        grid-template-areas: "header" "nav" "main" "footer";
+        grid-gap: 0.25rem;
+        background: url("../resources/images/clouds.jpg") no-repeat;
+        background-size: cover;
+        font-size: 0.85rem;
+        font-family: customFont, serif;
+        height: 100%;
+        min-height: 100vh;
+    }
+
+    p {
+        font-size: 1.05rem;
+    }
+
+    ul li {
+        font-size: 1.05rem;
+    }
+
+    ol li {
+        font-size: 1.05rem;
+    }
+
+    #nav > ul li a {
+        padding: 0.5rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    header {
+        text-align: center;
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    #nav {
+        text-align: center;
+        grid-area: menu;
+        grid-column: 1;
+        grid-row: 2 / span 1;
+    }
+
+    main {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    #simple_example {
+        float: none;
+    }
+
+    pre {
+        float: none;
+    }
+
+    footer {
+        grid-area: footer;
+        grid-column: 1 / span 1;
+    }
+
+    #examples {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        grid-gap: 0.125rem;
+    }
+
+    #examples > div {
+        flex-direction: column-reverse;
+    }
+
+    #examples > div > figure > img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

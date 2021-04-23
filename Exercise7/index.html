@@ -12,7 +12,7 @@
         <header>
             <h1>Raytracing</h1>
             <div id="date_data">
-                <p id="date">test</p>
+                <p id="date"></p>
                 <p id="date_sentence"></p>
             </div>
         </header>
@@ -45,7 +45,11 @@
                         <br>These effects produce realistic soft shadows instead of "baked" hard shadows<a href="sources.html"><sup>(3)</sup></a> that look very defined
                         with sharp edges and reflections of objects on the ground or other surfaces.</p>
                     <figure id="simple_example">
-                        <img src="images/simple_raytracing_example.png" alt="rtx_simple_example" width="500" height="332">
+                        <picture>
+                            <source media="(max-width:768px)" srcset="../resources/images/simple_raytracing_example_med.png">
+                            <source media="(max-width:425px)" srcset="../resources/images/simple_raytracing_example_low.png">
+                            <img src="../resources/images/simple_raytracing_example.png" alt="rtx_simple_example" width="500" height="332" onclick="openImage(this)">
+                        </picture>
                         <figcaption>A simple example of shadow rays<a href="sources.html"><sup>(1)</sup></a></figcaption>
                     </figure>
                 </section>
@@ -88,7 +92,7 @@
                     Here we can see a code example of a basic ray-tracing algorithm.<a href="sources.html"><sup>(15)</sup></a>
                     <br>
                     <pre>
-                    <code>
+                        <code>
 Color raytrace(Ray r, int depth, Scene world, vector &lt;Light*&gt; lights)
 {
     Ray *refl, *tran;
@@ -117,16 +121,21 @@ Color raytrace(Ray r, int depth, Scene world, vector &lt;Light*&gt; lights)
     }
     return color_l + color_r + color_t;
 }
-                </code>
-                </pre>
+                        </code>
+                    </pre>
                 </section>
 
                 <figure id="dof_example">
-                    <img src="images/balls_dof_render.png" alt="dof_render" width="533" height="300">
+                    <picture>
+                        <source media="(max-width:768px)" srcset="../resources/images/balls_dof_render_med.png">
+                        <source media="(max-width:425px)" srcset="../resources/images/balls_dof_render_low.png">
+                        <img src="../resources/images/balls_dof_render.png" alt="dof_render" width="533" height="300" onclick="openImage(this)">
+                    </picture>
                     <figcaption>Example of depth of field effect and reflections</figcaption>
                 </figure>
             </article>
         </main>
+
         <footer>
             <p>Copyright © 2021
                 <br>Made with HTML 5 & CSS</p>
