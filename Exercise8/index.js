@@ -84,5 +84,46 @@ function getTodayDate()
 
 function dataValidation()
 {
+    ageCheck();
+    passwordMatching();
+}
 
+function passwordMatching()
+{
+    let pw = document.getElementById("pw");
+    let conf_pw = document.getElementById("conf_pw");
+
+    if (pw === conf_pw)
+    {
+        pw.setCustomValidity("")
+    }
+    else pw.setCustomValidity("Password and Confirm Password need to match!")
+}
+
+function ageCheck()
+{
+    let dob = document.getElementById("dob");
+
+    let date_now = new Date();
+    let birthdate = dob.split('/');
+    let born = new Date(birthdate[2], birthdate[0] - 1, birthdate[1]);
+
+    let age_today = getAge(born, date_now);
+    if (age_today < 16)
+    {
+        dob.setCustomValidity("You need to be at least 16 to sign up!");
+    }
+}
+
+function getAge(date_born, date_now)
+{
+    let birthday = new Date(date_now.getFullYear(), date_born.getMonth(), date_born.getDate());
+    if (date_now >= birthday)
+    {
+        return date_now.getFullYear() - date_born.getFullYear();
+    }
+    else
+    {
+        return date_now.getFullYear() - date_born.getFullYear() - 1;
+    }
 }
