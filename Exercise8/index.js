@@ -81,3 +81,8 @@ function getTodayDate()
 {
     return new Date().getDate() + " " + convertMonth() + " " + new Date().getFullYear();
 }
+
+function dataValidation()
+{
+
+}
