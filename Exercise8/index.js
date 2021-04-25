@@ -82,15 +82,13 @@ function getTodayDate()
     return new Date().getDate() + " " + convertMonth() + " " + new Date().getFullYear();
 }
 
-function dataValidation()
+function dataValidation(form)
 {
     let age = ageCheck();
-    let pw = passwordMatching();
+    let pwM = passwordMatching();
+    let pwC = checkPassword();
 
-    if (!age || !pw)
-    {
-        return false;
-    }
+    return !(!age || !pwM || !pwC);
 }
 
 function passwordMatching()
@@ -105,7 +103,11 @@ function passwordMatching()
         conf_pw.preventDefault();
         return false;
     }
-    else conf_pw.setCustomValidity("");
+    else
+    {
+        conf_pw.setCustomValidity("");
+        return true;
+    }
 }
 
 function ageCheck()
@@ -123,7 +125,11 @@ function ageCheck()
         dob.preventDefault();
         return false;
     }
-    else dob.setCustomValidity("");
+    else
+    {
+        dob.setCustomValidity("");
+        return true;
+    }
 }
 
 function getAge(date_born, date_now)
@@ -136,5 +142,25 @@ function getAge(date_born, date_now)
     else
     {
         return date_now.getFullYear() - date_born.getFullYear() - 1;
+    }
+}
+
+function checkPassword()
+{
+    let pw = document.getElementById("pw");
+
+    let regExp = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+    if (!pw.value.match(regExp))
+    {
+        pw.setCustomValidity("Password must have at least 8 characters, up to 25 characters, one lowercase" +
+            " and one uppercase letter, one digit and one special character!");
+        pw.reportValidity();
+        return false;
+    }
+    else
+    {
+        pw.setCustomValidity("");
+        return true;
     }
 }
