@@ -26,7 +26,7 @@
         </nav>
 
         <main>
-            <form autocomplete="on">
+            <form autocomplete="on" onsubmit="return dataValidation()">
                 <fieldset id="personal_details">
                     <legend>Personal details</legend>
                     <div id="column_1">
@@ -323,52 +323,52 @@
                     <legend>Getting to know you</legend>
                     <div id="reason">
                         <label for="join_reason">Why do you want to sign up? *</label><br>
-                        <textarea id="join_reason" cols="80" rows="15" minlength="100" maxlength="2500" wrap="hard" required></textarea><br><br>
+                        <textarea id="join_reason" cols="80" rows="15" minlength="50" maxlength="2500" wrap="hard" required></textarea><br><br>
                     </div>
                     <div id="p_xp">
                         <label>What is your programming experience? *</label><br>
                         <div class="xp_radios">
                             <label for="xp1">1</label>
-                            <input type="radio" id="xp1" required>
+                            <input type="radio" id="xp1" name="xp_radio" required>
                         </div>
                         <div class="xp_radios">
                             <label for="xp2">2</label>
-                            <input type="radio" id="xp2">
+                            <input type="radio" id="xp2" name="xp_radio">
                         </div>
                         <div class="xp_radios">
                             <label for="xp3">3</label>
-                            <input type="radio" id="xp3">
+                            <input type="radio" id="xp3" name="xp_radio">
                         </div>
                         <div class="xp_radios">
                             <label for="xp4">4</label>
-                            <input type="radio" id="xp4">
+                            <input type="radio" id="xp4" name="xp_radio">
                         </div>
                         <div class="xp_radios">
                             <label for="xp5">5</label>
-                            <input type="radio" id="xp5">
+                            <input type="radio" id="xp5" name="xp_radio">
                         </div>
                     </div>
                     <div id="cg_xp">
                         <label>What is your computer graphics experience? *</label><br>
                         <div class="xp_radios">
                             <label for="cxp1">1</label>
-                            <input type="radio" id="cxp1" required>
+                            <input type="radio" id="cxp1" required name="cg_xp_radio">
                         </div>
                         <div class="xp_radios">
                             <label for="cxp2">2</label>
-                            <input type="radio" id="cxp2">
+                            <input type="radio" id="cxp2" name="cg_xp_radio">
                         </div>
                         <div class="xp_radios">
                             <label for="cxp3">3</label>
-                            <input type="radio" id="cxp3">
+                            <input type="radio" id="cxp3" name="cg_xp_radio">
                         </div>
                         <div class="xp_radios">
                             <label for="cxp4">4</label>
-                            <input type="radio" id="cxp4">
+                            <input type="radio" id="cxp4" name="cg_xp_radio">
                         </div>
                         <div class="xp_radios">
                             <label for="cxp5">5</label>
-                            <input type="radio" id="cxp5">
+                            <input type="radio" id="cxp5" name="cg_xp_radio">
                         </div>
                     </div>
                     <div id="g_genre">
@@ -377,11 +377,11 @@
                     </div>
                     <div id="skills">
                         <label for="skill">What are some of your skills that you think are relevant with the site? *</label><br>
-                        <textarea id="skill" cols="80" rows="15" minlength="200" maxlength="3000" wrap="hard" required></textarea><br><br>
+                        <textarea id="skill" cols="80" rows="15" minlength="100" maxlength="3000" wrap="hard" required></textarea><br><br>
                     </div>
                     <div id="additions">
                         <label for="suggest">What would you like to see in the site? *</label><br>
-                        <textarea id="suggest" cols="80" rows="15" minlength="100" maxlength="3000" wrap="hard" required></textarea><br><br>
+                        <textarea id="suggest" cols="80" rows="15" minlength="50" maxlength="3000" wrap="hard" required></textarea><br><br>
                     </div>
                     <div id="games">
                         <label for="fav">What are your favorite games? *</label><br>
@@ -391,7 +391,36 @@
                         <label for="inter">What technology interests you the most? *</label><br>
                         <textarea id="inter" cols="80" rows="15" minlength="10" maxlength="3000" wrap="hard" required></textarea><br><br>
                     </div>
+                    <div id="shadows">
+                        <label for="shadow">What do you think are the two most common shadow problems in graphics? *</label><br>
+                        <textarea id="shadow" cols="80" rows="15" minlength="15" maxlength="3000" wrap="hard" required></textarea><br><br>
+                    </div>
+                    <div id="contribution">
+                        <label>How much are you willing to contribute?</label><br>
+                        <div class="xp_radios">
+                            <label for="c1">Not much</label>
+                            <input type="radio" id="c1" name="c_radio" required>
+                        </div>
+                        <div class="xp_radios">
+                            <label for="c2">A little</label>
+                            <input type="radio" id="c2" name="c_radio">
+                        </div>
+                        <div class="xp_radios">
+                            <label for="c3">Whenever I can</label>
+                            <input type="radio" id="c3" name="c_radio">
+                        </div>
+                        <div class="xp_radios">
+                            <label for="c4">Quite a bit</label>
+                            <input type="radio" id="c4" name="c_radio">
+                        </div>
+                        <div class="xp_radios">
+                            <label for="c5">A lot</label>
+                            <input type="radio" id="c5" name="c_radio">
+                        </div>
+                    </div>
                 </fieldset>
+
+                <button type="submit">Submit</button>
             </form>
         </main>
 
